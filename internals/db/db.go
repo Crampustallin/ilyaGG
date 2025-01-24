@@ -20,6 +20,10 @@ func New(driver, connectionString string) *DataBase {
 	}
 }
 
+func (db *DataBase) Close() (err error) {
+	return db.Close()
+}
+
 func (db *DataBase) GetUsers() (users []models.User, err error) {
 	query := "SELECT user_id, user_name, user_score FROM users"
 	rows, err := db.pg.Queryx(query)
