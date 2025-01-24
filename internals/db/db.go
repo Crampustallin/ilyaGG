@@ -41,3 +41,13 @@ func (db *DataBase) GetUsers() (users []models.User, err error) {
 
 	return users, nil
 }
+
+func (db *DataBase) InsertUser(userName, passHash string) (err error) {
+	query := "INSERT INTO users (user_name, pass_hash) VALUES ($1, $2)"
+	_, err = db.pg.Exec(query, userName, passHash)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
