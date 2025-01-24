@@ -1,11 +1,11 @@
-package service
+package services
 
 import (
 	"os"
 
 	"github.com/Crampustallin/ilyaGG/internals/db"
 	"github.com/Crampustallin/ilyaGG/internals/models"
-	"github.com/Crampustallin/ilyaGG/internals/service/user_service"
+	"github.com/Crampustallin/ilyaGG/internals/services/user_service"
 )
 
 type Service struct {
