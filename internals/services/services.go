@@ -3,6 +3,8 @@ package services
 import (
 	"os"
 
+	_ "github.com/lib/pq"
+
 	"github.com/Crampustallin/ilyaGG/internals/db"
 	"github.com/Crampustallin/ilyaGG/internals/models"
 	"github.com/Crampustallin/ilyaGG/internals/services/user_service"

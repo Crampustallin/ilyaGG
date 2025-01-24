@@ -7,7 +7,7 @@ CREATE TABLE users
 	pass_hash text NOT NULL,
 	user_score int NOT NULL,
 	user_pic BYTEA,
-	user_status text,
+	user_status text
 );
 
 ALTER TABLE users OWNER TO "ilyaGG"
