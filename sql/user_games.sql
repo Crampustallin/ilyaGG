@@ -6,7 +6,7 @@ CREATE TABLE user_games
 	game_title text NOT NULL, -- primary key from games
 	game_rating int, 
 	game_review text,
-	game_status int,
+	game_status int, -- 0: in progress 1: done, 2: drop
 	add_date date DEFAULT CURRENT_DATE,
 	upd_date date DEFAULT CURRENT_DATE
 );

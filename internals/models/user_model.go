@@ -8,7 +8,8 @@ type User struct {
 }
 
 type UserGame struct {
+	UserId     int    `json:"user_id" db:"user_id"`
 	GameTitle  string `json:"game_title" db:"game_title"`
 	GameStatus int    `json:"game_status" db:"game_status"`
-	AddDate    string `json:"add_dt" db:"add_dt"`
+	AddDate    string `json:"add_date" db:"add_date"`
 }

@@ -33,3 +33,13 @@ func (s *UserService) SetUser(userName, pass string) (err error) {
 
 	return nil
 }
+
+func (s *UserService) GetScoreBoard() (err error) {
+	// TODO: get users since it's the beta get all users anyway
+	// in the ftuture maybe we should create something like groups and get score board informatioin only for users in this group
+
+	// TODO: get user_games that is status is in progress
+	// if some users don't have games like that then just NA the game. But send their data of the score and the name anyway
+
+	return
+}
