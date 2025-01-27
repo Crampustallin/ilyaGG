@@ -17,6 +17,8 @@ func NewServer() *http.Server {
 
 	handler := handlers.New()
 
+	router.GET("/", handler.IndexHandler)
+
 	handler.SetUserHandlersGroup(appApi)
 
 	return &http.Server{
