@@ -22,3 +22,15 @@ func (h *Handler) IndexHandler(c *gin.Context) {
 	defer cancel()
 	render(c, http.StatusOK, views.Index())
 }
+
+func (h *Handler) RegisterView(c *gin.Context) {
+	_, cancel := context.WithTimeout(context.Background(), appTimeout)
+	defer cancel()
+	render(c, http.StatusOK, views.LoginView("/app-api/user/register"))
+}
+
+func (h *Handler) LoginView(c *gin.Context) {
+	_, cancel := context.WithTimeout(context.Background(), appTimeout)
+	defer cancel()
+	render(c, http.StatusOK, views.LoginView("/app-api/user/login"))
+}

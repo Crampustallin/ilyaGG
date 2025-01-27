@@ -7,6 +7,11 @@ type User struct {
 	UserGame  UserGame `json:"user_game"`
 }
 
+type UserRegister struct {
+	UserName string `json:"user_name"`
+	UserPass string `json:"user_pass"`
+}
+
 type UserGame struct {
 	UserId     int    `json:"user_id" db:"user_id"`
 	GameTitle  string `json:"game_title" db:"game_title"`

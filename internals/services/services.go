@@ -11,7 +11,7 @@ import (
 )
 
 type Service struct {
-	userService UserService
+	UserService UserService
 }
 
 const CONNECTION_STRING_ENV_NAME = "DB_CONNECTION_STRING"
@@ -19,11 +19,12 @@ const CONNECTION_STRING_ENV_NAME = "DB_CONNECTION_STRING"
 func New() *Service {
 	dataBase := db.New("postgres", os.Getenv(CONNECTION_STRING_ENV_NAME))
 	return &Service{
-		userService: user_service.New(dataBase),
+		UserService: user_service.New(dataBase),
 	}
 }
 
 type UserService interface {
 	GetUsers() (users []models.User, err error)
 	SetUser(userName, pass string) (err error)
+	GetUser(userName, pass string) (err error)
 }

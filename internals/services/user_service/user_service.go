@@ -2,6 +2,8 @@ package user_service
 
 import (
 	"encoding/base64"
+	"errors"
+	"fmt"
 
 	"github.com/Crampustallin/ilyaGG/internals/interfaces"
 	"github.com/Crampustallin/ilyaGG/internals/models"
@@ -30,6 +32,23 @@ func (s *UserService) SetUser(userName, pass string) (err error) {
 	if err != nil {
 		return err
 	}
+
+	return nil
+}
+
+func (s *UserService) GetUser(userName, pass string) (err error) {
+	hashBytes := argon2.IDKey([]byte(pass), []byte{}, 1, 64*1024, 4, 32)
+	passHash := base64.RawStdEncoding.EncodeToString(hashBytes)
+	u, err := s.dataBase.GetUser(userName, passHash)
+	if err != nil {
+		return err
+	}
+
+	if u == nil {
+		return errors.New("no data")
+	}
+
+	fmt.Println(u)
 
 	return nil
 }

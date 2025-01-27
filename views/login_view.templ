@@ -1,0 +1,10 @@
+package views
+
+import "github.com/Crampustallin/ilyaGG/views/components"
+
+templ LoginView(path string) {
+<body class="dark:bg-gray-700">
+@components.Header()
+@components.Login(path)
+</body>
+}

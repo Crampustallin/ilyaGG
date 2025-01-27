@@ -6,4 +6,5 @@ type DataBase interface {
 	Close() (err error)
 	GetUsers() (users []models.User, err error)
 	InsertUser(userName, passHash string) (err error)
+	GetUser(userName, passHash string) (user *models.User, err error)
 }

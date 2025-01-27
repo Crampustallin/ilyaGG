@@ -18,6 +18,8 @@ func NewServer() *http.Server {
 	handler := handlers.New()
 
 	router.GET("/", handler.IndexHandler)
+	router.GET("/register", handler.RegisterView)
+	router.GET("/login", handler.LoginView)
 
 	handler.SetUserHandlersGroup(appApi)
 
